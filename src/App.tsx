@@ -21,7 +21,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={
+          <Route path="/DSA-AIG_Timetable" element={
             <ProtectedRoute>
               <Overview />
             </ProtectedRoute>
