@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Overview from "./pages/Overview";
 import MonthOverview from "./pages/MonthOverview";
@@ -21,6 +21,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Navigate to="/DSA-AIG_Timetable" replace />} />
           <Route path="/DSA-AIG_Timetable" element={
             <ProtectedRoute>
               <Overview />
@@ -28,17 +29,17 @@ const App = () => (
           } />
           <Route path="/month/1" element={
             <ProtectedRoute>
-              <MonthOverview monthId="1"/>
+              <MonthOverview monthId="1" />
             </ProtectedRoute>
           } />
           <Route path="/month/2" element={
             <ProtectedRoute>
-              <MonthOverview monthId="2"/>
+              <MonthOverview monthId="2" />
             </ProtectedRoute>
           } />
           <Route path="/month/3" element={
             <ProtectedRoute>
-              <MonthOverview monthId="3"/>
+              <MonthOverview monthId="3" />
             </ProtectedRoute>
           } />
           <Route path="/week/:weekId" element={
